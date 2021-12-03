@@ -2,6 +2,8 @@ package core.usecase.registers;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 import core.entity.Client;
@@ -9,7 +11,7 @@ import core.repository.ClientRepository;
 
 public class RegisterClientTest {
 
-    class RegisterClientRepositoryMemory implements ClientRepository {
+    class ClientRepositoryMemory implements ClientRepository {
 
         @Override
         public Client getCientById(int id) {
@@ -30,11 +32,17 @@ public class RegisterClientTest {
             }
             return true;
         }
+
+        @Override
+        public ArrayList<Client> getAll() {
+            // TODO Auto-generated method stub
+            return null;
+        }
     }
 
     @Test
     public void register_with_some_atr_null() {
-        RegisterClientRepositoryMemory registerClientRepository = new RegisterClientRepositoryMemory();
+        ClientRepositoryMemory registerClientRepository = new ClientRepositoryMemory();
         RegisterClient registerClient = new RegisterClient(registerClientRepository);
         boolean registration_result;
         Client client;

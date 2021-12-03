@@ -33,7 +33,7 @@ public class RegisterClientTest {
     }
 
     @Test
-    public void testRegisterClient() {
+    public void register_with_some_atr_null() {
         RegisterClientRepositoryMemory registerClientRepository = new RegisterClientRepositoryMemory();
         RegisterClient registerClient = new RegisterClient(registerClientRepository);
         boolean registration_result;

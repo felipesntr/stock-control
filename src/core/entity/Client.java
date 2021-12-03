@@ -16,4 +16,28 @@ public class Client {
         this.address = address;
         this.document = document;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getDocument() {
+        return document;
+    }
 }

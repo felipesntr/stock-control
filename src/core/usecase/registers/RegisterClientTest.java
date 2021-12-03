@@ -1,15 +1,15 @@
-package core.usecase;
+package core.usecase.registers;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import core.entity.Client;
-import core.repository.RegisterClientRepository;
+import core.repository.ClientRepository;
 
 public class RegisterClientTest {
 
-    class RegisterClientRepositoryMemory implements RegisterClientRepository {
+    class RegisterClientRepositoryMemory implements ClientRepository {
 
         @Override
         public Client getCientById(int id) {

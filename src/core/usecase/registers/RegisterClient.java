@@ -1,12 +1,12 @@
-package core.usecase;
+package core.usecase.registers;
 
 import core.entity.Client;
-import core.repository.RegisterClientRepository;
+import core.repository.ClientRepository;
 
 public class RegisterClient {
-    private RegisterClientRepository registerClientRepository;
+    private ClientRepository registerClientRepository;
 
-    public RegisterClient(RegisterClientRepository registerClientRepository) {
+    public RegisterClient(ClientRepository registerClientRepository) {
         this.registerClientRepository = registerClientRepository;
     }
 

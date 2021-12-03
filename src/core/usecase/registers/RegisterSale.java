@@ -1,12 +1,12 @@
-package core.usecase;
+package core.usecase.registers;
 
 import core.entity.Sale;
-import core.repository.RegisterSaleRepository;
+import core.repository.SaleRepository;
 
 public class RegisterSale {
-    private RegisterSaleRepository registerSaleRepository;
+    private SaleRepository registerSaleRepository;
 
-    public RegisterSale(RegisterSaleRepository registerSaleRepository) {
+    public RegisterSale(SaleRepository registerSaleRepository) {
         this.registerSaleRepository = registerSaleRepository;
     }
 

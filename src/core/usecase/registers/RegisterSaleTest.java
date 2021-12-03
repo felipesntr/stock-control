@@ -1,14 +1,14 @@
-package core.usecase;
+package core.usecase.registers;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import core.entity.Sale;
-import core.repository.RegisterSaleRepository;
+import core.repository.SaleRepository;
 
 public class RegisterSaleTest {
-    class RegisterSaleRepositoryMemory implements RegisterSaleRepository {
+    class RegisterSaleRepositoryMemory implements SaleRepository {
 
         @Override
         public boolean saveSale(Sale sale) {

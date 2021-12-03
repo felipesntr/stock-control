@@ -2,7 +2,7 @@ package core.repository;
 
 import core.entity.Sale;
 
-public interface RegisterSaleRepository {
+public interface SaleRepository {
 
     public boolean saveSale(Sale sale);
 

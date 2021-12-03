@@ -14,4 +14,25 @@ public class Sale {
         this.storeId = storeId;
         this.date = date;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public String getStoreId() {
+        return storeId;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
 }

@@ -2,6 +2,8 @@ package core.usecase.registers;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 import core.entity.Product;
@@ -26,6 +28,12 @@ public class RegisterProductTest {
         public boolean getProductById(String id) {
             // TODO Auto-generated method stub
             return false;
+        }
+
+        @Override
+        public ArrayList<Product> getAll() {
+            // TODO Auto-generated method stub
+            return null;
         }
 
     }

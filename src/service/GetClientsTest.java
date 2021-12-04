@@ -1,4 +1,4 @@
-package core.usecase.lists;
+package service;
 
 import java.util.ArrayList;
 

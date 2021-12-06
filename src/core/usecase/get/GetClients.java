@@ -1,4 +1,4 @@
-package service;
+package core.usecase.get;
 
 import java.util.ArrayList;
 
@@ -13,7 +13,11 @@ public class GetClients {
         this.clientRepository = clientRepository;
     }
 
-    public ArrayList<Client> execute() {
+    public ArrayList<Client> getAll() {
         return clientRepository.getAll();
+    }
+
+    public Client getCientById(String id) {
+        return clientRepository.getCientById(id);
     }
 }

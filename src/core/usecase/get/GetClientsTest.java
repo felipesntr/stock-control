@@ -1,4 +1,4 @@
-package service;
+package core.usecase.get;
 
 import java.util.ArrayList;
 
@@ -16,16 +16,22 @@ public class GetClientsTest {
         Client client_1 = new Client("lorem", "lorem", "lorem", "lorem", "lorem", "lorem");
         Client client_2 = new Client("lorem", "lorem", "lorem", "lorem", "lorem", "lorem");
         Client client_3 = new Client("lorem", "lorem", "lorem", "lorem", "lorem", "lorem");
+        Client client_correct = new Client("correct_id", "lorem", "lorem", "lorem", "lorem", "lorem");
 
         public ClientRepositoryMemory() {
             clients.add(client_1);
             clients.add(client_2);
             clients.add(client_3);
+            clients.add(client_correct);
         }
 
         @Override
-        public Client getCientById(int id) {
-            // TODO Auto-generated method stub
+        public Client getCientById(String id) {
+            for (Client client : clients) {
+                if (client.getId().equals(id)) {
+                    return client;
+                }
+            }
             return null;
         }
 
@@ -46,7 +52,14 @@ public class GetClientsTest {
     public void assert_that_get_all_return_all_clients() {
         ClientRepositoryMemory clientRepository = new ClientRepositoryMemory();
         GetClients getClients = new GetClients(clientRepository);
-        ArrayList<Client> clients = getClients.execute();
-        assert clients.size() == 3;
+        ArrayList<Client> clients = getClients.getAll();
+        assert clients.size() == 4;
+    }
+
+    public void should_return_null_if_invalid_id_is_provided() {
+        ClientRepositoryMemory clientRepository = new ClientRepositoryMemory();
+        GetClients getClients = new GetClients(clientRepository);
+        Client client = getClients.getCientById("invalid_id");
+        assert client == null;
     }
 }

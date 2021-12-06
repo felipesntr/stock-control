@@ -1,4 +1,4 @@
-package service;
+package core.usecase.get;
 
 import java.util.ArrayList;
 
@@ -26,9 +26,9 @@ public class GetProductsTest {
         }
 
         @Override
-        public boolean getProductById(String id) {
+        public Product getProductById(String id) {
             // TODO Auto-generated method stub
-            return false;
+            return null;
         }
 
         @Override
@@ -41,7 +41,7 @@ public class GetProductsTest {
     public void assert_that_get_all_return_all_products() {
         ProductRepositoryMemory productRepository = new ProductRepositoryMemory();
         GetProducts getProducts = new GetProducts(productRepository);
-        ArrayList<Product> products = getProducts.execute();
+        ArrayList<Product> products = getProducts.getAll();
         assert products.size() == 3;
     }
 }

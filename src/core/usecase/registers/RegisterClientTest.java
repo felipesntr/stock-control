@@ -14,11 +14,6 @@ public class RegisterClientTest {
     class ClientRepositoryMemory implements ClientRepository {
 
         @Override
-        public Client getCientById(int id) {
-            return null;
-        }
-
-        @Override
         public boolean saveClient(Client client) {
             if (client.getId() == null ||
                     client.getName() == null ||
@@ -35,6 +30,12 @@ public class RegisterClientTest {
 
         @Override
         public ArrayList<Client> getAll() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
+        @Override
+        public Client getCientById(String id) {
             // TODO Auto-generated method stub
             return null;
         }

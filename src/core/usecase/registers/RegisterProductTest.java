@@ -25,9 +25,9 @@ public class RegisterProductTest {
         }
 
         @Override
-        public boolean getProductById(String id) {
+        public Product getProductById(String id) {
             // TODO Auto-generated method stub
-            return false;
+            return null;
         }
 
         @Override

@@ -1,4 +1,4 @@
-package service;
+package core.usecase.get;
 
 import java.util.ArrayList;
 
@@ -13,8 +13,11 @@ public class GetProducts {
         this.productRepository = productRepository;
     }
 
-    public ArrayList<Product> execute() {
+    public ArrayList<Product> getAll() {
         return productRepository.getAll();
     }
 
+    public Product getProductById(String id) {
+        return productRepository.getProductById(id);
+    }
 }

@@ -27,7 +27,11 @@ public class GetProductsTest {
 
         @Override
         public Product getProductById(String id) {
-            // TODO Auto-generated method stub
+            for (Product product : products) {
+                if (product.getId().equals(id)) {
+                    return product;
+                }
+            }
             return null;
         }
 
@@ -43,5 +47,12 @@ public class GetProductsTest {
         GetProducts getProducts = new GetProducts(productRepository);
         ArrayList<Product> products = getProducts.getAll();
         assert products.size() == 3;
+    }
+
+    public void should_return_null_if_invalid_id_is_provided() {
+        ProductRepositoryMemory productRepository = new ProductRepositoryMemory();
+        GetProducts getProducts = new GetProducts(productRepository);
+        Product product = getProducts.getProductById("invalid_id");
+        assert product == null;
     }
 }

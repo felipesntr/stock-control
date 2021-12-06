@@ -13,6 +13,10 @@ public class Product {
         this.category = category;
     }
 
+    public String getId() {
+        return name;
+    }
+
     public String getName() {
         return name;
     }

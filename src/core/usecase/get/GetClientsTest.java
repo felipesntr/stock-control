@@ -62,4 +62,11 @@ public class GetClientsTest {
         Client client = getClients.getCientById("invalid_id");
         assert client == null;
     }
+
+    public void should_return_product_if_valid_id_is_provided() {
+        ClientRepositoryMemory clientRepository = new ClientRepositoryMemory();
+        GetClients getClients = new GetClients(clientRepository);
+        Client client = getClients.getCientById("correct_id");
+        assert client.getId().equals("correct_id");
+    }
 }
